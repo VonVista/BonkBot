@@ -2,7 +2,7 @@ console.log("Code start");
 require('dotenv').config({path: __dirname + '/.env'})
 
 const Discord = require("discord.js")
-
+console.log(process.env)
 const client = new Discord.Client()
 client.login(process.env.BOTTOKEN)
 
