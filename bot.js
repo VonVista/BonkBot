@@ -1,8 +1,10 @@
 console.log("Code start");
+require('dotenv').config({path: __dirname + '/.env'})
 
 const Discord = require("discord.js")
+
 const client = new Discord.Client()
-client.login("ODQwNTQyMDA2MjkwODA4ODYy.YJZtvg.wmkDvhg698osTjKG5FRRUlIvngg")
+client.login(process.env.BOTTOKEN)
 
 client.on("ready", readyDiscord)
 
@@ -29,19 +31,23 @@ function randomNumber(min, max){
 }
 
 function gotMessage(msg){
-    console.log(msg.content.substring(0,5))
-    if(msg.content.substring(0,5) === "$bonk") {
+    var message = msg.content.split(" ")
+    if(message[0] === "$bonk") {
         msg.reply("🔨 BONK " + msg.content.substring(6) + ", you're going to horny jail 🔨")
     }
-    if(msg.content.substring(0,6) === "$trash") {
+    if(message[0] === "$trash") {
         msg.reply("🗑️ " + msg.content.substring(7) + " is TRASH 🗑️")
     }
 
-    if(msg.content === "$inspire") {
+    if(message[0] === "$inspire") {
         msg.reply("🌸 " + inspireArr[randomNumber(0, inspireArr.length)] + " 🌸")
     }
 
-    if(msg.content.substring(0,6) === "$pakyu") {
+    if(message[0] === "$pakyu") {
         msg.reply("🖕 " + msg.content.substring(7) + " 🖕")
+    }
+
+    if(message[0] === "$bonkbot") {
+        msg.reply("Tangina mo")
     }
 }
