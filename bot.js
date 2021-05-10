@@ -50,4 +50,7 @@ function gotMessage(msg){
     if(message[0] === "$bonkbot") {
         msg.reply("Tangina mo")
     }
+    if(message[0] === "$enlighten") {
+        msg.reply("Mas marami kang free time pag wala kang org")
+    }
 }
