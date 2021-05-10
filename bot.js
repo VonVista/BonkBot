@@ -33,9 +33,6 @@ function randomNumber(min, max){
 function gotMessage(msg){
     var message = msg.content.split(" ")
     console.log(message[0])
-    console.log(message[0].substring(1,1))
-    console.log(message[0].substring(2,1))
-    console.log(message[0].substring(3,1))
     if(message[0] === "$bonk") {
         msg.reply("🔨 BONK " + msg.content.substring(6) + ", you're going to horny jail 🔨")
     }
@@ -57,10 +54,10 @@ function gotMessage(msg){
     if(message[0] === "$enlighten") {
         msg.reply("Mas marami kang free time pag wala kang org")
     }
-    if(message[0].substring(0,1) == "$" && message[0].substring(1,1) == "w" && message[0].substring(2,1) != "a" ){
+    if(message[0].substring(0,1) == "$" && message[0].substring(1,2) == "w" && message[0].substring(2,3) != "a" ){
         msg.reply("Muntikan na")
     }
-    if(message[0].substring(0,1) == "$" && message[0].substring(1,1) != "w" && message[0].substring(2,1) == "a" ){
+    if(message[0].substring(0,1) == "$" && message[0].substring(1,2) != "w" && message[0].substring(2,3) == "a" ){
         msg.reply("Muntikan na")
     }
 }
