@@ -32,6 +32,7 @@ function randomNumber(min, max){
 
 function gotMessage(msg){
     var message = msg.content.split(" ")
+    console.log(message[0])
     if(message[0] === "$bonk") {
         msg.reply("🔨 BONK " + msg.content.substring(6) + ", you're going to horny jail 🔨")
     }
