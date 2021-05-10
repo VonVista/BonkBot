@@ -54,10 +54,10 @@ function gotMessage(msg){
     if(message[0] === "$enlighten") {
         msg.reply("Mas marami kang free time pag wala kang org")
     }
-    if(message[0].substring(0,1) == "$" && message[0].substring(1,2) == "w" && message[0].substring(2,3) != "a" && message[0].substring.length == 3){
+    if(message[0].substring(0,1) == "$" && message[0].substring(1,2) == "w" && message[0].substring(2,3) != "a" && message[0].length == 3){
         msg.reply("Muntikan na")
     }
-    if(message[0].substring(0,1) == "$" && message[0].substring(1,2) != "w" && message[0].substring(2,3) == "a" && message[0].substring.length == 3){
+    if(message[0].substring(0,1) == "$" && message[0].substring(1,2) != "w" && message[0].substring(2,3) == "a" && message[0].length == 3){
         msg.reply("Muntikan na")
     }
 }
