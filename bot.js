@@ -33,7 +33,6 @@ var claimTimer = {}
 
 function gotMessage(msg){
     var message = msg.content.split(" ")
-    console.log(message)
     if(message[0] === "$bonk") {
         msg.reply("🔨 BONK " + msg.content.substring(6) + ", you're going to horny jail 🔨")
     }
