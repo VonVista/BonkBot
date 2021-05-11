@@ -2,7 +2,6 @@ console.log("Code start");
 require('dotenv').config({path: __dirname + '/.env'})
 
 const Discord = require("discord.js")
-console.log(process.env)
 const client = new Discord.Client()
 client.login(process.env.BOTTOKEN)
 
@@ -30,9 +29,11 @@ function randomNumber(min, max){
     return Math.floor(r)
 }
 
+var claimTimer = {}
+
 function gotMessage(msg){
     var message = msg.content.split(" ")
-    console.log(message[0])
+    console.log(message)
     if(message[0] === "$bonk") {
         msg.reply("🔨 BONK " + msg.content.substring(6) + ", you're going to horny jail 🔨")
     }
@@ -59,5 +60,18 @@ function gotMessage(msg){
     }
     if(message[0].substring(0,1) == "$" && message[0].substring(1,2) != "w" && message[0].substring(2,3) == "a" && message[0].length == 3){
         msg.reply("Muntikan na")
+    }
+    if(message[1] == "you" && message[3] == "claim"){
+        claimTimer[message[0].substring(0,message[0].length - 1)] = message[2]
+        
+        
+    }
+    if(message[0] == "$claimcheck"){
+        let timerOutput = "Claim status (**Mudae**) of the server\n"
+        for (const [key, value] of Object.entries(claimTimer)) {
+            console.log(key, value);
+            timerOutput += key + ": " + value + "\n"
+        }
+        msg.reply(timerOutput)
     }
 }
