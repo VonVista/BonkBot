@@ -10,6 +10,7 @@ client.on("ready", readyDiscord)
 function readyDiscord() {
     console.log("Bot is online")
     client.user.setActivity('pumping lemmas', { type: 'WATCHING' })
+    testLoop()
 }
 
 client.on("message", gotMessage)
@@ -30,6 +31,7 @@ function randomNumber(min, max){
 }
 
 var claimTimer = {}
+var timeReset = false
 
 function gotMessage(msg){
     var message = msg.content.split(" ")
@@ -66,11 +68,12 @@ function gotMessage(msg){
         
     }
     if(message[0] == "$claimcheck"){
-        let timerOutput = "Claim status (**Mudae**) of the server\n"
-        for (const [key, value] of Object.entries(claimTimer)) {
-            console.log(key, value);
-            timerOutput += key + ": " + value + "\n"
-        }
-        msg.reply(timerOutput)
+        // let timerOutput = "Claim status (**Mudae**) of the server\n"
+        // for (const [key, value] of Object.entries(claimTimer)) {
+        //     console.log(key, value);
+        //     timerOutput += key + ": " + value + "\n"
+        // }
+        // msg.reply(timerOutput)
+        msg.reply("Under maintenance")
     }
 }
