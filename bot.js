@@ -33,9 +33,8 @@ async function demo(){
     let date
     while(true){
         date = new Date()
-        console.log(date.getHours() % 3)
-        console.log(date.getMinutes())
-        
+        // console.log(date.getHours() % 3)
+        // console.log(date.getMinutes())
 
         if(date.getHours() % 3 == 0 && date.getMinutes() == 29)
         for (const [key, value] of Object.entries(claimTimer)) {
