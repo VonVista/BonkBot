@@ -54,7 +54,6 @@ var timeReset = false
 
 function gotMessage(msg){
     var message = msg.content.split(" ")
-    //console.log(message)
 
     if(message[0] === "$bonkbot") {
         msg.reply(`🔨 BONK BOT LIST OF COMMANDS 🔨
@@ -98,7 +97,7 @@ function gotMessage(msg){
         claimTimer[message[0].substring(0,message[0].length - 1)] = message[2]
     }
     
-    if(message[4] == "are" && message[5] == "now" && message[6] == "married!"){
+    if(message[5] == "are" && message[6] == "now" && message[7] == "married!"){
         claimTimer[message[1]] = "can't"
     }
         
