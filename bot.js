@@ -7,6 +7,8 @@ client.login(process.env.BOTTOKEN)
 
 client.on("ready", readyDiscord)
 
+// const rendon_labador = new MessageAttachment("./assets/bobo.jpg")
+
 function readyDiscord() {
     console.log("Bot is online")
     client.user.setActivity('$bonkbot', { type: 'PLAYING' })
@@ -86,12 +88,12 @@ function gotMessage(msg){
     if(message[0] === "$enlighten") {
         msg.reply("Mas marami kang free time pag wala kang org")
     }
-    if(message[0].substring(0,1) == "$" && message[0].substring(1,2) == "w" && message[0].substring(2,3) != "a" && message[0].substring(2,3) != "l" && message[0].length == 3){
-        msg.reply("Muntikan na")
-    }
-    if(message[0].substring(0,1) == "$" && message[0].substring(1,2) != "w" && message[0].substring(2,3) == "a" && message[0].length == 3){
-        msg.reply("Muntikan na")
-    }
+    // if(message[0].substring(0,1) == "$" && message[0].substring(1,2) == "w" && message[0].substring(2,3) != "a" && message[0].substring(2,3) != "l" && message[0].length == 3){
+    //     msg.reply("Muntikan na")
+    // }
+    // if(message[0].substring(0,1) == "$" && message[0].substring(1,2) != "w" && message[0].substring(2,3) == "a" && message[0].length == 3){
+    //     msg.reply("Muntikan na")
+    // }
 
     if(message[1] == "you" && message[3] == "claim"){
         claimTimer[message[0].substring(0,message[0].length - 1)] = message[2]
@@ -99,6 +101,14 @@ function gotMessage(msg){
     
     if(message[5] == "are" && message[6] == "now" && message[7] == "married!"){
         claimTimer[message[1]] = "can't"
+    }
+
+    if(message[0] === "$bobo") {
+        msg.channel.send(message[1] + ', bobo ka kase', {
+            files: [
+                "./assets/bobo.jpg"
+            ]
+        });
     }
         
     if(message[0] == "$claimcheck"){
