@@ -64,6 +64,7 @@ function gotMessage(msg){
         **$inspire** -> receive a random "motivational" quote 
         **$pakyu** -> <$pakyu @someone> to send someone middle fingers 
         **$enlighten** -> receive the answer to life, the universe, and everything 
+        **$bobo** -> <$bobo @someone (message)> call Renden Labador to send a motivational message
         
         **MUDAE INTEGRATED COMMANDS** 
         **$claimcheck** -> check if someone have claims 
