@@ -109,11 +109,20 @@ function gotMessage(msg){
     }
 
     if(message[0] === "$bobo") {
-        msg.channel.send(message[1] + ', bobo ka kase', {
-            files: [
-                "./assets/bobo.jpg"
-            ]
-        });
+        if(message[1] != undefined){
+            msg.channel.send(message[1] + ', bobo ka kase', {
+                files: [
+                    "./assets/bobo.jpg"
+                ]
+            });
+        }
+        else {
+            msg.channel.send('bobo ka kase', {
+                files: [
+                    "./assets/bobo.jpg"
+                ]
+            });
+        }
     }
         
     if(message[0] == "$claimcheck"){
