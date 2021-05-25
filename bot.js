@@ -137,4 +137,7 @@ function gotMessage(msg){
         msg.reply(timerOutput)
         //msg.reply("Under maintenance")
     }
+    if(message[0] == "tite"){
+        msg.reply("Haha tite")
+    }
 }
