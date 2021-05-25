@@ -126,6 +126,9 @@ function gotMessage(msg){
     }
         
     if(message[0] == "$claimcheck"){
+        msg.reply("Under maintenance")
+        return
+
         let timerOutput = "Claim status (**Mudae**) of the server\n"
         for (const [key, value] of Object.entries(claimTimer)) {
             console.log(key, value);
