@@ -38,9 +38,12 @@ async function demo(){
         // console.log(date.getHours() % 3)
         // console.log(date.getMinutes())
 
-        if(date.getHours() % 3 == 0 && date.getMinutes() == 29)
-        for (const [key, value] of Object.entries(claimTimer)) {
-            claimTimer[key] = "can"
+        if(date.getHours() % 3 == 0 && date.getMinutes() == 29){
+            console.log("CLAIM RESET LEZGO")
+            for (const [key, value] of Object.entries(claimTimer)) {
+                claimTimer[key] = "can"
+            }
+        
         }
         await sleep(60000)
     }
@@ -64,7 +67,7 @@ function gotMessage(msg){
         **$inspire** -> receive a random "motivational" quote 
         **$pakyu** -> <$pakyu @someone> to send someone middle fingers 
         **$enlighten** -> receive the answer to life, the universe, and everything 
-        **$bobo** -> <$bobo @someone (message)> call Renden Labador to send a motivational message
+        **$bobo** -> <$bobo @someone (message)> call Rendon Labador to send a motivational message
         
         **MUDAE INTEGRATED COMMANDS** 
         **$claimcheck** -> check if someone have claims 
@@ -100,8 +103,9 @@ function gotMessage(msg){
         claimTimer[message[0].substring(0,message[0].length - 1)] = message[2]
     }
     
-    if(message[5] == "are" && message[6] == "now" && message[7] == "married!"){
+    if(message[message.length - 4] == "are" && message[message.length - 3] == "now" && message[message.length - 2] == "married!"){
         claimTimer[message[1]] = "can't"
+        console.log("Pasok")
     }
 
     if(message[0] === "$bobo") {
