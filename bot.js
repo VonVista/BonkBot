@@ -68,9 +68,6 @@ function gotMessage(msg){
         **$pakyu** -> <$pakyu @someone> to send someone middle fingers 
         **$enlighten** -> receive the answer to life, the universe, and everything 
         **$bobo** -> <$bobo @someone (message)> call Rendon Labador to send a motivational message
-        
-        **MUDAE INTEGRATED COMMANDS** 
-        **$claimcheck** -> check if someone have claims 
         `)
     }
 
@@ -124,20 +121,22 @@ function gotMessage(msg){
             });
         }
     }
-        
-    if(message[0] == "$claimcheck"){
-        msg.reply("Under maintenance")
-        return
-
-        let timerOutput = "Claim status (**Mudae**) of the server\n"
-        for (const [key, value] of Object.entries(claimTimer)) {
-            console.log(key, value);
-            timerOutput += key + ": " + value + "\n"
-        }
-        msg.reply(timerOutput)
-        //msg.reply("Under maintenance")
-    }
     if(message[0] == "tite"){
         msg.reply("Haha tite")
     }
 }
+
+// ARCHIVED CODES
+
+    // if(message[0] == "$claimcheck"){
+    //     msg.reply("Under maintenance")
+    //     return
+
+    //     let timerOutput = "Claim status (**Mudae**) of the server\n"
+    //     for (const [key, value] of Object.entries(claimTimer)) {
+    //         console.log(key, value);
+    //         timerOutput += key + ": " + value + "\n"
+    //     }
+    //     msg.reply(timerOutput)
+    //     //msg.reply("Under maintenance")
+    // }
